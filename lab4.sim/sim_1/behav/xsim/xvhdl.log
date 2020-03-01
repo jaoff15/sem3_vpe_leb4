@@ -1,6 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/jacoboffersen/advanced_programmable_electronics/lab4/lab4.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/new/top.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'top'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/jacoboffersen/advanced_programmable_electronics/lab4/lab4.srcs/sources_1/new/uart_module.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'uart_module'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/jacoboffersen/advanced_programmable_electronics/lab4/lab4.srcs/sources_1/new/uart_tx.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'uart_tx'

@@ -50,7 +50,8 @@ architecture Behavioral of top is
     signal tx_start_signal : std_logic := '0';
     signal tx_index : integer := 0;
 
-    signal rx : std_logic_vector(7 downto 0);
+    signal rx_data : std_logic_vector(7 downto 0);
+    signal rx_done_signal : std_logic;
     
     
         
@@ -63,7 +64,11 @@ architecture Behavioral of top is
                   TX_OUT    : out std_logic;
                   tx_done   : out std_logic;
                   TX_BUSY   : out std_logic;
-                  RX        : out STD_LOGIC_VECTOR (N-1 downto 0));
+                  RX_IN     : in std_logic;
+                  rx_done   : out std_logic
+--                  ;
+--                  RX        : out STD_LOGIC_VECTOR (N-1 downto 0)
+);
     end component;
     
     component clock_generator is
@@ -75,11 +80,13 @@ begin
 
 
 -- Control output
-process (CLK_IN)
+process (CLK_IN, rx_done_signal)
 begin
-    if tx_busy = '0' then
-       tx_index <= tx_index + 1;
-       tx_start_signal <= '1';
+    if rising_edge(rx_done_signal) or (rising_edge(CLK_IN) and rx_done_signal = '0' and tx_index = 0)  then
+       if tx_index < 7 then
+           tx_index <= tx_index + 1;
+           tx_start_signal <= '1';
+       end if;
     else
         tx_start_signal <= '0';
     end if;
@@ -102,14 +109,18 @@ with tx_index select
 uart_module0:uart_module 
 generic map( N => 8)
 port map(
-    CLK_IN  => clk,  
-    ENABLE_IN => '1',
-    TX_OUT => tx_out,
-    TX_START => tx_start_signal,
-    TX_DATA => tx_data,
-    tx_done => tx_done,
-    tx_busy => tx_busy,
-    RX => rx
+    CLK_IN      => clk,  
+    ENABLE_IN   => '1',
+    TX_OUT      => tx_out,
+    TX_START    => tx_start_signal,
+    TX_DATA     => tx_data,
+    tx_done     => tx_done,
+    tx_busy     => tx_busy,
+    RX_IN       => tx_out,
+    rx_done     => rx_done_signal
+--    ,
+--    rx_busy     => rx_busy,
+--    rx_data     => rx_data
 );
 
 clock_generator0:clock_generator 

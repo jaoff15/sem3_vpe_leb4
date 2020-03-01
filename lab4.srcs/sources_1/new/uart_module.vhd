@@ -40,7 +40,12 @@ entity uart_module is
               TX_OUT    : out std_logic;
               TX_DONE   : out std_logic;
               TX_BUSY   : out std_logic;
-              RX        : out STD_LOGIC_VECTOR (N-1 downto 0));
+              RX_IN     : in std_logic;
+              RX_done   : out std_logic
+           
+--              ;
+--              RX        : out STD_LOGIC_VECTOR (N-1 downto 0)
+              );
 end uart_module;
 
 architecture Behavioral of uart_module is
@@ -62,7 +67,11 @@ architecture Behavioral of uart_module is
         Generic ( N         : integer range 1 to 64 := 8); --bits
         Port    ( CLK_IN    : in STD_LOGIC;
                   ENABLE_IN : in std_logic;
-                  RX        : out std_logic_vector(N-1 downto 0));
+                  rx_in     : in std_logic;
+                  rx_busy   : out std_logic;
+                  RX_done   : out std_logic;
+                  rx_data   : out std_logic_vector(N-1 downto 0)
+                  );
     end component;
 begin
 
@@ -81,8 +90,13 @@ port map(    CLK_IN     => CLK_IN,
 uart_rx0:uart_rx 
 generic map( N         => 8)
 port map(    CLK_IN    => CLK_IN,
-             ENABLE_IN => '0',
-             RX        => RX
+             ENABLE_IN => '1',
+             rx_in     => rx_in,
+             rx_done   => RX_done
+--             ,
+--             rx_data   => rx_data
+--             ,
+--             rx_busy   => rx_busy
 );
 
 

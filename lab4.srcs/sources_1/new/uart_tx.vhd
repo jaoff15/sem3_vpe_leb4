@@ -58,6 +58,7 @@ begin
 
     
 
+-- Control states
 process (CLK_IN,START_IN)
 begin -- process
     if ENABLE_IN = '1' then
