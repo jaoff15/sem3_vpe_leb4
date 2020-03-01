@@ -1,0 +1,7 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+Warning:  Warning : parameter CLKFBOUT_MULT_F of MMCME2_ADV instance :top_tb:top0:clock_generator0:clock_module_TE02770:MMCME2_BASE_inst:MMCME2_ADV_inst: is not set to a resolution of 0.125 (7.680000e+00) and is beimg rounded down to (7.625000e+00).
+
+Time: 0 ps  Iteration: 0  Process: /top_tb/top0/clock_generator0/clock_module_TE02770/MMCME2_BASE_inst/MMCME2_ADV_inst/INIPROC  File: /wrk/2018.3/continuous/2018_12_06_2405991/data/vhdl/src/unisims/primitive/MMCME2_ADV.vhd
+Warning: Warning : [Unisim MMCME2_ADV-162] input CLKIN1 period and attribute CLKIN1_PERIOD are not same.
+Time: 1790 ns  Iteration: 3  Process: /top_tb/top0/clock_generator0/clock_module_TE02770/MMCME2_BASE_inst/MMCME2_ADV_inst/pchk_p  File: /wrk/2018.3/continuous/2018_12_06_2405991/data/vhdl/src/unisims/primitive/MMCME2_ADV.vhd
