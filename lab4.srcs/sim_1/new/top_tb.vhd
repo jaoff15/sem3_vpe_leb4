@@ -36,17 +36,24 @@ entity top_tb is
 end top_tb;
 architecture Behavioral of top_tb is
 
-    signal clk : std_logic := '0';
+    signal clk      : std_logic := '0';
     signal tx_start : std_logic := '0';  
+    signal tx_out   : std_logic;
+    signal rx_in    : std_logic;
+    signal rx_data  : std_logic_vector(7 downto 0);
     
 
     component top is
-        Port ( CLK_IN  : in STD_LOGIC;
-        tx_start : in std_logic := '0');
+        Port ( clk_in   : in  STD_LOGIC;
+               tx_start : in  std_logic;
+               tx_out   : out std_logic;
+               rx_in    : in  std_logic;
+               rx_data  : out std_logic_vector(7 downto 0));
     end component;
 begin
 
-clk      <= not clk after 10ns;
+clk      <= not clk after 5ns;
+
 
 
 
@@ -61,10 +68,17 @@ end process;
 
 
 
+ rx_in <= tx_out;
+
+
+
 top0:top 
 port map(
-    CLK_IN  => clk,
-    tx_start => tx_start
+    CLK_IN   => clk,
+    tx_start => tx_start,
+    tx_out   => tx_out,
+    rx_in    => rx_in,
+    rx_data  => rx_data
 );
 
 

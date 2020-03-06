@@ -21,18 +21,12 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity uart_module is
-    Generic ( N         : integer range 1   to 64   := 8); --bits
+    Generic ( N         : integer range 0 to 64 :=  8); --bits
     Port    ( CLK_IN    : in STD_LOGIC;
               ENABLE_IN : in std_logic;
               TX_DATA   : in std_logic_vector(N-1 downto 0);
@@ -41,19 +35,18 @@ entity uart_module is
               TX_DONE   : out std_logic;
               TX_BUSY   : out std_logic;
               RX_IN     : in std_logic;
-              RX_done   : out std_logic
-           
---              ;
---              RX        : out STD_LOGIC_VECTOR (N-1 downto 0)
+              RX_done   : out std_logic;
+              rx_data   : out std_logic_vector(N-1 downto 0)
+
               );
 end uart_module;
 
 architecture Behavioral of uart_module is
     
---    signal start : std_logic := '0';
+    signal clk : std_logic;
     
     component uart_tx is
-        Generic ( N         : integer range 1 to 64 := 8); --bits
+        Generic ( N         : integer range 0 to 64 :=  8); --bits
         Port    ( CLK_IN    : in STD_LOGIC;
                   ENABLE_IN : in std_logic;
                   START_IN  : in std_logic;
@@ -64,7 +57,7 @@ architecture Behavioral of uart_module is
     end component;
 
     component uart_rx is
-        Generic ( N         : integer range 1 to 64 := 8); --bits
+        Generic ( N         : integer range 0 to 64 :=  8); --bits
         Port    ( CLK_IN    : in STD_LOGIC;
                   ENABLE_IN : in std_logic;
                   rx_in     : in std_logic;
@@ -74,11 +67,12 @@ architecture Behavioral of uart_module is
                   );
     end component;
 begin
+clk <= CLK_IN;
 
 uart_tx0:uart_tx 
 generic map( N          => 8)
-port map(    CLK_IN     => CLK_IN,
-             ENABLE_IN  => '1',
+port map(    CLK_IN     => clk,
+             ENABLE_IN  => enable_in,
              START_IN   => TX_START,
              TX_DATA    => TX_DATA,
              TX_OUT     => TX_OUT,
@@ -89,14 +83,11 @@ port map(    CLK_IN     => CLK_IN,
 
 uart_rx0:uart_rx 
 generic map( N         => 8)
-port map(    CLK_IN    => CLK_IN,
-             ENABLE_IN => '1',
+port map(    CLK_IN    => clk,
+             ENABLE_IN => enable_in,
              rx_in     => rx_in,
-             rx_done   => RX_done
---             ,
---             rx_data   => rx_data
---             ,
---             rx_busy   => rx_busy
+             rx_done   => RX_done,
+             rx_data   => rx_data
 );
 
 

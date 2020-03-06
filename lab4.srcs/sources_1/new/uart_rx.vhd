@@ -21,6 +21,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -32,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity uart_rx is
-    Generic ( N         : integer range 1 to 64 := 8); --bits
+    Generic ( N         : integer range 0 to 64 :=  8); --bits
     Port    ( CLK_IN    : in STD_LOGIC;
               ENABLE_IN : in std_logic;
               rx_in     : in std_logic;
@@ -43,25 +45,28 @@ entity uart_rx is
 end uart_rx;
 
 architecture Behavioral of uart_rx is
+--    unsigned(7 downto 0)  := (others => '0');
     
-    
-    signal state     : integer := 0; 
+    signal state     : integer := 0 ;
     signal substate  : integer := 0;
+--    signal state     : integer := 0; 
+--    signal substate  : integer := 0;
     
     signal data_temp : std_logic_vector(N-1 downto 0) := (others => '0');
     signal bit_temp  : std_logic := '0';
     
-    
+
     signal rx_busy_signal : std_logic := '0';
     
-    signal step_per_databit : integer := 4;
+--    signal step_per_databit : integer := 4;
+    signal step_per_databit : integer := 4; 
 begin
 
 rx_busy <= rx_busy_signal;
 rx_done <= not rx_busy_signal;
 
 -- Control states
-process (RX_IN, CLK_IN)
+process (RX_IN, CLK_IN, enable_in, state, substate, step_per_databit, rx_busy_signal)
 begin -- process
     if ENABLE_IN = '1' then
         if state = N+1 and substate = step_per_databit-1 then
@@ -96,8 +101,9 @@ begin
                 if substate = step_per_databit / 2 then
                     bit_temp <= RX_IN;
                     if RX_IN = '1' then
-                        data_temp(N - 1- (state -1)) <= '1';
+                        data_temp(N - 1 - state-1) <= '1';
                     end if;
+
                 end if;
             end if; 
         end if;

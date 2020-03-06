@@ -22,6 +22,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
+
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -33,7 +35,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --use UNISIM.VComponents.all;
 
 entity uart_tx is
-    Generic ( N         : integer range 1 to 64 := 8); --bits
+    Generic ( N         : integer range 0 to 64 :=  8); --bits
     Port    ( CLK_IN    : in STD_LOGIC;
               START_IN  : in std_logic := '0';
               ENABLE_IN : in std_logic;
@@ -44,13 +46,16 @@ entity uart_tx is
 end uart_tx;
 
 architecture Behavioral of uart_tx is
-
-    signal state    : integer := 0; 
-    signal substate : integer := 0;
+--    unsigned(7 downto 0)  := (others => '0');
+--    signal state    : integer := 0; 
+--    signal substate : integer := 0;
+--    signal step_per_databit : integer := 4;
     
+    signal state    : integer := 0;
+    signal substate : integer := 0;
     signal step_per_databit : integer := 4;
 --    signal data_index : integer := 0;
-    
+
     signal running : std_logic := '0';
 
     signal tx_data_snapshot : std_logic_vector(0 to N-1) := (others => '0');
@@ -59,11 +64,11 @@ begin
     
 
 -- Control states
-process (CLK_IN,START_IN)
+process (CLK_IN, ENABLE_IN, START_IN, running, tx_data)
 begin -- process
     if ENABLE_IN = '1' then
         
-        if rising_edge(START_IN) and running = '0' then
+        if START_IN = '1' and running = '0' then
             running  <= '1';
             TX_BUSY <= '1';
             tx_data_snapshot  <= TX_DATA;

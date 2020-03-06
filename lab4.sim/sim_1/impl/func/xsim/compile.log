@@ -1,0 +1,8 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.sim/sim_1/impl/func/xsim/top_tb_func_impl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sim_1/new/top_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.sim/sim_1/impl/func/xsim/top_tb_func_impl.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sim_1/new/top_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_tb'
