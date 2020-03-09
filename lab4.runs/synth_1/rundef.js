@@ -12,9 +12,9 @@ var WshShell = new ActiveXObject( "WScript.Shell" );
 var ProcEnv = WshShell.Environment( "Process" );
 var PathVal = ProcEnv("PATH");
 if ( PathVal.length == 0 ) {
-  PathVal = "/home/jacoboffersen/Program/vivado/SDK/2018.3/bin:/home/jacoboffersen/Program/vivado/Vivado/2018.3/ids_lite/ISE/bin/lin64;/home/jacoboffersen/Program/vivado/Vivado/2018.3/ids_lite/ISE/lib/lin64;/home/jacoboffersen/Program/vivado/Vivado/2018.3/bin;";
+  PathVal = "/home/jacoboffersen/Program/vivado20182/SDK/2018.2/bin:/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/ids_lite/ISE/bin/lin64;/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/ids_lite/ISE/lib/lin64;/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/bin;";
 } else {
-  PathVal = "/home/jacoboffersen/Program/vivado/SDK/2018.3/bin:/home/jacoboffersen/Program/vivado/Vivado/2018.3/ids_lite/ISE/bin/lin64;/home/jacoboffersen/Program/vivado/Vivado/2018.3/ids_lite/ISE/lib/lin64;/home/jacoboffersen/Program/vivado/Vivado/2018.3/bin;" + PathVal;
+  PathVal = "/home/jacoboffersen/Program/vivado20182/SDK/2018.2/bin:/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/ids_lite/ISE/bin/lin64;/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/ids_lite/ISE/lib/lin64;/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/bin;" + PathVal;
 }
 
 ProcEnv("PATH") = PathVal;

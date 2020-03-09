@@ -18,24 +18,25 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7s25ftgb196-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.cache/wt [current_project]
-set_property parent.project_path /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.xpr [current_project]
+set_property webtalk.parent_dir /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.cache/wt [current_project]
+set_property parent.project_path /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.cache/ip [current_project]
+set_property ip_output_repo /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/new/binary_counter.vhd
-  /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/new/clock_generator.vhd
-  /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/new/clock_module_TE0277.vhd
-  /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/new/top.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/binary_counter.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/clock_generator.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/clock_module_TE0277.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/uart_module.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/uart_rx.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/uart_tx.vhd
+  /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/top.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -45,10 +46,10 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/constrs_1/new/const.xdc
-set_property used_in_implementation false [get_files /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/constrs_1/new/const.xdc]
+read_xdc /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/constrs_1/imports/new/const.xdc
+set_property used_in_implementation false [get_files /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/constrs_1/imports/new/const.xdc]
 
-set_param ips.enableIPCacheLiteLoad 1
+set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 
 synth_design -top top -part xc7s25ftgb196-1

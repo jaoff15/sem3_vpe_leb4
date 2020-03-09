@@ -7,20 +7,20 @@
 # 
 
 if [ -z "$PATH" ]; then
-  PATH=/home/jacoboffersen/Program/vivado/SDK/2018.3/bin:/home/jacoboffersen/Program/vivado/Vivado/2018.3/ids_lite/ISE/bin/lin64:/home/jacoboffersen/Program/vivado/Vivado/2018.3/bin
+  PATH=/home/jacoboffersen/Program/vivado20182/SDK/2018.2/bin:/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/ids_lite/ISE/bin/lin64:/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/bin
 else
-  PATH=/home/jacoboffersen/Program/vivado/SDK/2018.3/bin:/home/jacoboffersen/Program/vivado/Vivado/2018.3/ids_lite/ISE/bin/lin64:/home/jacoboffersen/Program/vivado/Vivado/2018.3/bin:$PATH
+  PATH=/home/jacoboffersen/Program/vivado20182/SDK/2018.2/bin:/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/ids_lite/ISE/bin/lin64:/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/bin:$PATH
 fi
 export PATH
 
 if [ -z "$LD_LIBRARY_PATH" ]; then
-  LD_LIBRARY_PATH=/home/jacoboffersen/Program/vivado/Vivado/2018.3/ids_lite/ISE/lib/lin64
+  LD_LIBRARY_PATH=/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/ids_lite/ISE/lib/lin64
 else
-  LD_LIBRARY_PATH=/home/jacoboffersen/Program/vivado/Vivado/2018.3/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=/home/jacoboffersen/Program/vivado20182/Vivado/2018.2/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.runs/synth_1'
+HD_PWD='/home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
