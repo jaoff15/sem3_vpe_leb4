@@ -4,4 +4,28 @@ Running: /home/jacoboffersen/Program/vivado20182/Vivado/2018.2/bin/unwrapped/lnx
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_signed
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture behavioral of entity xil_defaultlib.uart_tx [uart_tx_default]
+Compiling architecture behavioral of entity xil_defaultlib.uart_rx [uart_rx_default]
+Compiling architecture behavioral of entity xil_defaultlib.uart_module [uart_module_default]
+Compiling architecture mmcme2_adv_v of entity unisim.MMCME2_ADV [\MMCME2_ADV(clkfbout_mult_f=56.6...]
+Compiling architecture mmcme2_base_v of entity unisim.MMCME2_BASE [\MMCME2_BASE(clkfbout_mult_f=56....]
+Compiling architecture rtl of entity xil_defaultlib.clock_module_TE0277 [\clock_module_TE0277(m=56.625,d=...]
+Compiling architecture behavioral of entity xil_defaultlib.binary_counter [\binary_counter(n=12)\]
+Compiling architecture behavioral of entity xil_defaultlib.clock_generator [clock_generator_default]
+Compiling architecture behavioral of entity xil_defaultlib.top [top_default]
+Compiling architecture testbench of entity xil_defaultlib.top_tb
+Built simulation snapshot top_tb_behav

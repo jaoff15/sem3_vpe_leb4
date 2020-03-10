@@ -63,8 +63,8 @@ begin
     tx_start <= '0';
     wait for 2000 ns;
     tx_start <= '1';
-    wait for 5000 ns;
-    tx_start <= '0';
+--    wait for 5000 ns;
+--    tx_start <= '0';
     wait;
 end process;
 

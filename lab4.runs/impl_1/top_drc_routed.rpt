@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Mon Mar  9 16:57:36 2020
+| Date         : Tue Mar 10 14:22:27 2020
 | Host         : JacobOffersen running 64-bit Ubuntu 19.10
 | Command      : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
 | Design       : top
@@ -24,13 +24,15 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 2
-+----------+----------+-----------------------------------------------------+------------+
-| Rule     | Severity | Description                                         | Violations |
-+----------+----------+-----------------------------------------------------+------------+
-| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| PLCK-23  | Warning  | Clock Placer Checks                                 | 1          |
-+----------+----------+-----------------------------------------------------+------------+
+             Violations found: 15
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
+| PDRC-153    | Warning  | Gated clock check                                           | 12         |
+| PLCK-23     | Warning  | Clock Placer Checks                                         | 1          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1          |
++-------------+----------+-------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -47,6 +49,66 @@ Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_des
 Refer to the device configuration user guide for more information.
 Related violations: <none>
 
+PDRC-153#1 Warning
+Gated clock check  
+Net uart_module0/uart_rx0/data_temp_reg[0]_i_1_n_0 is a gated clock net sourced by a combinational pin uart_module0/uart_rx0/data_temp_reg[0]_i_1/O, cell uart_module0/uart_rx0/data_temp_reg[0]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net uart_module0/uart_rx0/data_temp_reg[1]_i_1_n_0 is a gated clock net sourced by a combinational pin uart_module0/uart_rx0/data_temp_reg[1]_i_1/O, cell uart_module0/uart_rx0/data_temp_reg[1]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net uart_module0/uart_rx0/data_temp_reg[2]_i_1_n_0 is a gated clock net sourced by a combinational pin uart_module0/uart_rx0/data_temp_reg[2]_i_1/O, cell uart_module0/uart_rx0/data_temp_reg[2]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net uart_module0/uart_rx0/data_temp_reg[3]_i_1_n_0 is a gated clock net sourced by a combinational pin uart_module0/uart_rx0/data_temp_reg[3]_i_1/O, cell uart_module0/uart_rx0/data_temp_reg[3]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net uart_module0/uart_rx0/data_temp_reg[4]_i_1_n_0 is a gated clock net sourced by a combinational pin uart_module0/uart_rx0/data_temp_reg[4]_i_1/O, cell uart_module0/uart_rx0/data_temp_reg[4]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net uart_module0/uart_rx0/data_temp_reg[5]_i_1_n_0 is a gated clock net sourced by a combinational pin uart_module0/uart_rx0/data_temp_reg[5]_i_1/O, cell uart_module0/uart_rx0/data_temp_reg[5]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net uart_module0/uart_rx0/data_temp_reg[6]_i_1_n_0 is a gated clock net sourced by a combinational pin uart_module0/uart_rx0/data_temp_reg[6]_i_1/O, cell uart_module0/uart_rx0/data_temp_reg[6]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net uart_module0/uart_rx0/data_temp_reg[7]_i_1_n_0 is a gated clock net sourced by a combinational pin uart_module0/uart_rx0/data_temp_reg[7]_i_1/O, cell uart_module0/uart_rx0/data_temp_reg[7]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#9 Warning
+Gated clock check  
+Net uart_module0/uart_rx0/rx_data_out is a gated clock net sourced by a combinational pin uart_module0/uart_rx0/rx_data_out_reg[7]_i_1/O, cell uart_module0/uart_rx0/rx_data_out_reg[7]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#10 Warning
+Gated clock check  
+Net uart_module0/uart_tx0/tx_data_snapshot_reg[6]_i_2_n_0 is a gated clock net sourced by a combinational pin uart_module0/uart_tx0/tx_data_snapshot_reg[6]_i_2/O, cell uart_module0/uart_tx0/tx_data_snapshot_reg[6]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#11 Warning
+Gated clock check  
+Net uart_module0/uart_tx0/tx_index_reg[3] is a gated clock net sourced by a combinational pin uart_module0/uart_tx0/tx_index[3]_i_3/O, cell uart_module0/uart_tx0/tx_index[3]_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#12 Warning
+Gated clock check  
+Net uart_module0/uart_tx0/tx_out_signal_i_reg_i_2_n_0 is a gated clock net sourced by a combinational pin uart_module0/uart_tx0/tx_out_signal_i_reg_i_2/O, cell uart_module0/uart_tx0/tx_out_signal_i_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
 PLCK-23#1 Warning
 Clock Placer Checks  
 Sub-optimal placement for a clock-capable IO pin and MMCM pair. 
@@ -55,6 +117,16 @@ Resolution: A dedicated routing path between the two can be used if: (a) The clo
 
 	clk_in_hw_IBUF_inst (IBUF.O) is locked to L5
 	clock_generator0/clock_module_TE02770/MMCME2_BASE_inst (MMCME2_ADV.CLKIN1) is provisionally placed by clockplacer on MMCME2_ADV_X1Y0
+
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT uart_module0/uart_tx0/tx_index[3]_i_3 is driving clock pin of 4 cells. This could lead to large hold time violations. First few involved cells are:
+    tx_index_reg[0] {FDRE}
+    tx_index_reg[1] {FDRE}
+    tx_index_reg[2] {FDRE}
+    tx_index_reg[3] {FDRE}
 
 Related violations: <none>
 

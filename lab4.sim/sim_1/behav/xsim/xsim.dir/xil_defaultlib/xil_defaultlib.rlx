@@ -2,11 +2,11 @@
 2018.2
 Jun 14 2018
 20:07:38
-/home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sim_1/imports/new/top_tb.vhd,1583769151,vhdl,,,,top_tb,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/binary_counter.vhd,1582991472,vhdl,,,,binary_counter,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/clock_generator.vhd,1583764474,vhdl,,,,clock_generator,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/clock_module_TE0277.vhd,1582989953,vhdl,,,,clock_module_te0277,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/top.vhd,1583769232,vhdl,,,,top,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/uart_module.vhd,1583756922,vhdl,,,,uart_module,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/uart_rx.vhd,1583768231,vhdl,,,,uart_rx,,,,,,,,
-/home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/sources_1/imports/new/uart_tx.vhd,1583768347,vhdl,,,,uart_tx,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sim_1/imports/new/top_tb.vhd,1583844181,vhdl,,,,top_tb,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/imports/new/binary_counter.vhd,1582991472,vhdl,,,,binary_counter,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/imports/new/clock_generator.vhd,1583764474,vhdl,,,,clock_generator,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/imports/new/clock_module_TE0277.vhd,1582989953,vhdl,,,,clock_module_te0277,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/imports/new/top.vhd,1583842281,vhdl,,,,top,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/imports/new/uart_module.vhd,1583843316,vhdl,,,,uart_module,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/imports/new/uart_rx.vhd,1583846377,vhdl,,,,uart_rx,,,,,,,,
+/home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/sources_1/imports/new/uart_tx.vhd,1583845667,vhdl,,,,uart_tx,,,,,,,,

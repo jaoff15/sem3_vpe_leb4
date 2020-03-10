@@ -69,12 +69,12 @@ set rc [catch {
   create_project -in_memory -part xc7s25ftgb196-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.cache/wt [current_project]
-  set_property parent.project_path /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.xpr [current_project]
-  set_property ip_output_repo /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.cache/wt [current_project]
+  set_property parent.project_path /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.xpr [current_project]
+  set_property ip_output_repo /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.runs/synth_1/top.dcp
-  read_xdc /home/jacoboffersen/advanced_programmable_electronics/lab4_2/lab4.srcs/constrs_1/imports/new/const.xdc
+  add_files -quiet /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.runs/synth_1/top.dcp
+  read_xdc /home/jacoboffersen/advanced_programmable_electronics/sem3_vpe_leb4/lab4.srcs/constrs_1/imports/new/const.xdc
   link_design -top top -part xc7s25ftgb196-1
   close_msg_db -file init_design.pb
 } RESULT]
